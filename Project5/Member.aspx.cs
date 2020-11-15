@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Web.Security;
 
 namespace Project5
 {
@@ -11,7 +12,10 @@ namespace Project5
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!HttpContext.Current.User.Identity.IsAuthenticated)
+            {
+                FormsAuthentication.RedirectToLoginPage();
+            }
         }
 
         protected void homePageButton_Click(object sender, EventArgs e)
