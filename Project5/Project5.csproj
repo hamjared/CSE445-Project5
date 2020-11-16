@@ -70,7 +70,8 @@
     <Content Include="Default.aspx" />
     <Content Include="login.aspx" />
     <Content Include="Member.aspx" />
-    <Content Include="Staff.aspx" />
+    <Content Include="MemberLogin.aspx" />
+    <Content Include="Staff\Staff.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -95,23 +96,34 @@
     <Compile Include="Member.aspx.designer.cs">
       <DependentUpon>Member.aspx</DependentUpon>
     </Compile>
+    <Compile Include="MemberLogin.aspx.cs">
+      <DependentUpon>MemberLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MemberLogin.aspx.designer.cs">
+      <DependentUpon>MemberLogin.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Staff.aspx.cs">
+    <Compile Include="Staff\Staff.aspx.cs">
       <DependentUpon>Staff.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Staff.aspx.designer.cs">
+    <Compile Include="Staff\Staff.aspx.designer.cs">
       <DependentUpon>Staff.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <Content Include="Staff\Web.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -9,6 +9,7 @@
 <body>
     <form id="form1" runat="server">
         <div>
+            Staff Login Page<br />
             <asp:Login ID="Login1" runat="server" Height="215px" OnAuthenticate="Login1_Authenticate" Width="343px">
             </asp:Login>
         </div>

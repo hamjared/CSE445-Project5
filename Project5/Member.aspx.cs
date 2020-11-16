@@ -12,10 +12,9 @@ namespace Project5
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!HttpContext.Current.User.Identity.IsAuthenticated)
-            {
-                FormsAuthentication.RedirectToLoginPage();
-            }
+            // Implement our own cookies to auto authenticate members
+            // if(! alreadyLoggedin){
+            //Response.Redirect("~/MemberLogin.aspx");
         }
 
         protected void homePageButton_Click(object sender, EventArgs e)

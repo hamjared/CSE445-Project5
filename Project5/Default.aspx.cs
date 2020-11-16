@@ -23,7 +23,7 @@ namespace Project5
         protected void Button2_Click(object sender, EventArgs e)
         {
             // Need to add redirect to staff login page if user is not already logged in as staff
-            Response.Redirect("~/Staff.aspx");
+            Response.Redirect("~/Staff/Staff.aspx");
         }
     }
 }
