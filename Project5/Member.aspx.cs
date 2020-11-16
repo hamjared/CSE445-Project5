@@ -14,7 +14,7 @@ namespace Project5
         {
             // Implement our own cookies to auto authenticate members
             // if(! alreadyLoggedin){
-            //Response.Redirect("~/MemberLogin.aspx");
+            Response.Redirect("~/MemberLogin.aspx");
         }
 
         protected void homePageButton_Click(object sender, EventArgs e)
