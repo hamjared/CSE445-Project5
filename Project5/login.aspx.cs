@@ -35,7 +35,7 @@ namespace Project5
 
         private bool searchStaffXML(string uname, string pass)
         {
-            XmlTextReader reader = new XmlTextReader("C:/Users/Daniel/source/repos/CSE445-Project5/Project5/App_Data/Staff.xml");
+            XmlTextReader reader = new XmlTextReader("~/App_Data/Staff.xml");
             if (reader == null)
             {
                 return false;
