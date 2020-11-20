@@ -11,7 +11,6 @@ namespace Project5
     
     public partial class MemberLogin : System.Web.UI.Page
     {
-        static bool verified = false;
 
         protected void Page_Load(object sender, EventArgs e)
         {
