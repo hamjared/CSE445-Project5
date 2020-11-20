@@ -12,6 +12,10 @@
             Member Login Page</div>
         <asp:Login ID="Login1" runat="server" OnAuthenticate="Login1_Authenticate">
         </asp:Login>
+        <p>
+&nbsp;&nbsp;&nbsp;&nbsp;<asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Sign Up" />
+            &nbsp;&nbsp;&nbsp;&nbsp;
+        </p>
     </form>
 </body>
 </html>
