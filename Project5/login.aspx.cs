@@ -24,7 +24,7 @@ namespace Project5
                 lbl_errors.Text = "You must enter a username!";
                 lbl_errors.ForeColor = System.Drawing.Color.Red;
             }
-            else if (txt_username.Text == "")
+            else if (txt_password.Text == "")
             {
                 lbl_errors.Text = "You must enter a password!";
                 lbl_errors.ForeColor = System.Drawing.Color.Red;
@@ -34,9 +34,9 @@ namespace Project5
                 authSuccessful = searchStaffXML(txt_username.Text, txt_password.Text);
                 if (authSuccessful)
                 {
-                    Response.Redirect("~/Staff/Staff.aspx");
                     lbl_errors.Text = "Successfully Logged In!";
                     lbl_errors.ForeColor = System.Drawing.Color.Green;
+                    Response.Redirect("~/Staff/Staff.aspx");
                 }
                 else
                 {
@@ -48,8 +48,8 @@ namespace Project5
 
         private bool searchStaffXML(string uname, string pass)
         {
-            XmlTextReader reader = new XmlTextReader("~/App_Data/Staff.xml");
-            //XmlTextReader reader = new XmlTextReader("C:/Users/Daniel/source/repos/CSE445-Project5/Project5/App_Data/Staff.xml");
+            //XmlTextReader reader = new XmlTextReader("~/App_Data/Staff.xml");
+            XmlTextReader reader = new XmlTextReader("C:/Users/Daniel/source/repos/CSE445-Project5/Project5/App_Data/Staff.xml");
             if (reader == null)
             {
                 return false;

@@ -84,6 +84,7 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
     <Content Include="Default.aspx" />
+    <Content Include="Global.asax" />
     <Content Include="login.aspx" />
     <Content Include="Member.aspx" />
     <Content Include="MemberLogin.aspx" />
@@ -104,6 +105,9 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="login.aspx.cs">
       <DependentUpon>login.aspx</DependentUpon>

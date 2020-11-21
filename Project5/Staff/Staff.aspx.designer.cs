@@ -67,13 +67,13 @@ namespace Project5 {
         protected global::System.Web.UI.WebControls.Label lbl_Password;
         
         /// <summary>
-        /// TextBox1 control.
+        /// txt_Password control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox txt_Password;
         
         /// <summary>
         /// bttn_AddStaff control.
