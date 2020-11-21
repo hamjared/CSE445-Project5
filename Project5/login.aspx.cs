@@ -19,12 +19,13 @@ namespace Project5
         protected void bttn_Login_Click(object sender, EventArgs e)
         {
             bool authSuccessful = false;
+            bool rememberMe = false;
             if (txt_username.Text == "")
             {
                 lbl_errors.Text = "You must enter a username!";
                 lbl_errors.ForeColor = System.Drawing.Color.Red;
             }
-            else if (txt_username.Text == "")
+            else if (txt_password.Text == "")
             {
                 lbl_errors.Text = "You must enter a password!";
                 lbl_errors.ForeColor = System.Drawing.Color.Red;
@@ -36,6 +37,12 @@ namespace Project5
                 {
                     lbl_errors.Text = "Successfully Logged In!";
                     lbl_errors.ForeColor = System.Drawing.Color.Green;
+                    if (checkBox_remember.Checked == true)
+                    {
+                        rememberMe = true;
+                    }
+                    FormsAuthentication.RedirectFromLoginPage(txt_username.Text, rememberMe);
+                    Response.Redirect("~/Staff/Staff.aspx");
                 }
                 else
                 {
@@ -47,8 +54,8 @@ namespace Project5
 
         private bool searchStaffXML(string uname, string pass)
         {
-            XmlTextReader reader = new XmlTextReader("~/App_Data/Staff.xml");
-            //XmlTextReader reader = new XmlTextReader("C:/Users/Daniel/source/repos/CSE445-Project5/Project5/App_Data/Staff.xml");
+            //XmlTextReader reader = new XmlTextReader("~/App_Data/Staff.xml");
+            XmlTextReader reader = new XmlTextReader("C:/Users/Daniel/source/repos/CSE445-Project5/Project5/App_Data/Staff.xml");
             if (reader == null)
             {
                 return false;
