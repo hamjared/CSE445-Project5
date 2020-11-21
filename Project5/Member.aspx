@@ -11,7 +11,17 @@
         <asp:Label ID="Label1" runat="server" Text="Member Page"></asp:Label>
         <div>
             <asp:Button ID="homePageButton" runat="server" OnClick="homePageButton_Click" Text="Home Page" />
+            <br />
+            <br />
+            <asp:Label ID="lbl_weatherTitle" runat="server" Text="5-Day Weather Forecast!" ForeColor="#0033CC"></asp:Label>
+            <br />
+            <asp:Label ID="lbl_weatherInstructions" runat="server" Text="Enter your Zip Code to get the weather:"></asp:Label>
+            &nbsp
+            <asp:TextBox ID="txt_weather" runat="server"></asp:TextBox>
+            <br />
+            <asp:Button ID="bttn_weather" runat="server" Text="Get Weather!" OnClick="bttn_weather_Click" />
         </div>
+        <asp:Label ID="lbl_weatherResults" runat="server"></asp:Label>
     </form>
 </body>
 </html>
