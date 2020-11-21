@@ -23,7 +23,7 @@
                 <asp:TextBox ID="txt_username" runat="server" Width="240px" BorderColor="Black" BorderWidth="1px" style="margin-left: 6px"></asp:TextBox>
                 <br />
                 <asp:Label ID="lbl_password" runat="server" Text="Password: "></asp:Label> &nbsp
-                <asp:TextBox ID="txt_password" runat="server" Width="241px" BorderColor="Black" BorderWidth="1px" style="margin-left: 8px"></asp:TextBox>
+                <asp:TextBox ID="txt_password" runat="server" Width="241px" BorderColor="Black" BorderWidth="1px" style="margin-left: 8px" TextMode="Password"></asp:TextBox>
                 <br />
                 <asp:Label ID="lbl_remember" runat="server" Text="Remember Me"></asp:Label>
                 &nbsp

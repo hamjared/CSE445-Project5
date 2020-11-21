@@ -28,7 +28,7 @@
             <br />
             <asp:Label ID="lbl_Password" runat="server" Text="Password:"></asp:Label>
             &nbsp
-            <asp:TextBox ID="txt_Password" runat="server" Width="204px" style="margin-left: 5px"></asp:TextBox>
+            <asp:TextBox ID="txt_Password" runat="server" Width="204px" style="margin-left: 5px" TextMode="Password"></asp:TextBox>
             <br />
             &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
             <asp:Button ID="bttn_AddStaff" runat="server" Text="Add" OnClick="bttn_AddStaff_Click" />
