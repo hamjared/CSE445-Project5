@@ -16,26 +16,39 @@ namespace Project5
 
         }
 
-        protected void Login1_Authenticate(object sender, AuthenticateEventArgs e)
+        protected void bttn_Login_Click(object sender, EventArgs e)
         {
             bool authSuccessful = false;
-            authSuccessful = searchStaffXML(Login1.UserName, Login1.Password);
-            if (authSuccessful)
+            if (txt_username.Text == "")
             {
-                e.Authenticated = true;
-                Response.Redirect("Member.aspx");
+                lbl_errors.Text = "You must enter a username!";
+                lbl_errors.ForeColor = System.Drawing.Color.Red;
+            }
+            else if (txt_username.Text == "")
+            {
+                lbl_errors.Text = "You must enter a password!";
+                lbl_errors.ForeColor = System.Drawing.Color.Red;
             }
             else
             {
-                e.Authenticated = false;
-                Response.Redirect("Default.aspx");
+                authSuccessful = searchStaffXML(txt_username.Text, txt_password.Text);
+                if (authSuccessful)
+                {
+                    lbl_errors.Text = "Successfully Logged In!";
+                    lbl_errors.ForeColor = System.Drawing.Color.Green;
+                }
+                else
+                {
+                    lbl_errors.Text = "Invalid Username and Password Combination!";
+                    lbl_errors.ForeColor = System.Drawing.Color.Red;
+                }
             }
-            FormsAuthentication.RedirectFromLoginPage(Login1.UserName, Login1.RememberMeSet);
         }
 
         private bool searchStaffXML(string uname, string pass)
         {
             XmlTextReader reader = new XmlTextReader("~/App_Data/Staff.xml");
+            //XmlTextReader reader = new XmlTextReader("C:/Users/Daniel/source/repos/CSE445-Project5/Project5/App_Data/Staff.xml");
             if (reader == null)
             {
                 return false;

@@ -8,11 +8,26 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
-            Staff Login Page<br />
-            <asp:Login ID="Login1" runat="server" Height="215px" OnAuthenticate="Login1_Authenticate" Width="343px" DisplayRememberMe="False">
-            </asp:Login>
+        <div text-align: left>
+            Staff Login Page
+            <br />
+            &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <asp:Label ID="lbl_Login" runat="server" Text="Log In"></asp:Label>
+            <br />
+            <br />
+            <asp:Label ID="lbl_username" runat="server" Text="Username: "></asp:Label> &nbsp
+            <asp:TextBox ID="txt_username" runat="server" Width="240px" BorderColor="Black" BorderWidth="1px" style="margin-left: 6px"></asp:TextBox>
+            <br />
+            <br />
+            <asp:Label ID="lbl_password" runat="server" Text="Password: "></asp:Label> &nbsp
+            <asp:TextBox ID="txt_password" runat="server" Width="241px" BorderColor="Black" BorderWidth="1px" style="margin-left: 8px"></asp:TextBox>
+            <br />
+            <br />
+            &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+            &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+            <asp:Button ID="bttn_Login" runat="server" Text="Log In" OnClick="bttn_Login_Click" />
+            <br />
         </div>
+        <asp:Label ID="lbl_errors" runat="server" BorderColor="White" BorderWidth="4px"></asp:Label>
     </form>
 </body>
 </html>
