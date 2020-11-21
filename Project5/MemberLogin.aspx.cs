@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Xml;
@@ -22,7 +23,7 @@ namespace Project5
             //IF button checked, save info to cookies
             bool auth = false;
 
-            XmlTextReader reader = new XmlTextReader("~/App_Data/Member.xml");
+            XmlTextReader reader = new XmlTextReader(HttpContext.Current.Server.MapPath("App_Data/Member.xml"));
 
             if (reader == null)
             {
@@ -51,6 +52,7 @@ namespace Project5
                                     if (reader.Value.ToString() == Login1.Password)
                                     {
                                         auth = true;
+                                        createFormsAuthTicket(Login1.UserName, Login1.RememberMeSet);
                                     }
                                 }
 
@@ -73,6 +75,20 @@ namespace Project5
                 e.Authenticated = false;
                 Response.Redirect("Default.aspx");
             }
+        }
+
+        private void createFormsAuthTicket(string username, bool isPersistent)
+        {
+            FormsAuthenticationTicket ticket = new FormsAuthenticationTicket(
+                1,
+                username,
+                DateTime.Now,
+                DateTime.Now.AddMinutes(30),
+                isPersistent,
+                "");
+            string encryptedTicket = FormsAuthentication.Encrypt(ticket);
+            HttpCookie cookie = new HttpCookie("memberCookie", encryptedTicket);
+            Response.Cookies.Add(cookie);
         }
 
         protected void Button1_Click(object sender, EventArgs e)
