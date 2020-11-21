@@ -25,8 +25,10 @@
                 <asp:Label ID="lbl_password" runat="server" Text="Password: "></asp:Label> &nbsp
                 <asp:TextBox ID="txt_password" runat="server" Width="241px" BorderColor="Black" BorderWidth="1px" style="margin-left: 8px"></asp:TextBox>
                 <br />
-                &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
-                &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+                <asp:Label ID="lbl_remember" runat="server" Text="Remember Me"></asp:Label>
+                &nbsp
+                <asp:CheckBox ID="checkBox_remember" runat="server" />
+                &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
                 <asp:Button ID="bttn_Login" runat="server" Text="Log In" OnClick="bttn_Login_Click" />
                 <br />
             </p>

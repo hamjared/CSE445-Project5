@@ -19,6 +19,7 @@ namespace Project5
         protected void bttn_Login_Click(object sender, EventArgs e)
         {
             bool authSuccessful = false;
+            bool rememberMe = false;
             if (txt_username.Text == "")
             {
                 lbl_errors.Text = "You must enter a username!";
@@ -36,6 +37,11 @@ namespace Project5
                 {
                     lbl_errors.Text = "Successfully Logged In!";
                     lbl_errors.ForeColor = System.Drawing.Color.Green;
+                    if (checkBox_remember.Checked == true)
+                    {
+                        rememberMe = true;
+                    }
+                    FormsAuthentication.RedirectFromLoginPage(txt_username.Text, rememberMe);
                     Response.Redirect("~/Staff/Staff.aspx");
                 }
                 else

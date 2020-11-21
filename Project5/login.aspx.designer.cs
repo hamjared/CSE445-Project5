@@ -67,6 +67,24 @@ namespace Project5 {
         protected global::System.Web.UI.WebControls.TextBox txt_password;
         
         /// <summary>
+        /// lbl_remember control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_remember;
+        
+        /// <summary>
+        /// checkBox_remember control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox checkBox_remember;
+        
+        /// <summary>
         /// bttn_Login control.
         /// </summary>
         /// <remarks>
