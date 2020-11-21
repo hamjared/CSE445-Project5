@@ -50,6 +50,8 @@
     <Reference Include="SRVTextToImage">
       <HintPath>..\..\..\..\..\..\Downloads\SRVTextToImage.dll\SRVTextToImage.dll</HintPath>
     </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -75,6 +77,12 @@
   <ItemGroup>
     <Content Include="App_Data\Member.xml" />
     <Content Include="App_Data\Staff.xml" />
+    <None Include="Connected Services\DanielServices\configuration91.svcinfo" />
+    <None Include="Connected Services\DanielServices\configuration.svcinfo" />
+    <None Include="Connected Services\DanielServices\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Default.aspx" />
     <Content Include="login.aspx" />
     <Content Include="Member.aspx" />
@@ -85,6 +93,11 @@
     <Content Include="CaptchaImage.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Connected Services\DanielServices\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -137,6 +150,16 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Connected Services\DanielServices\Service1.wsdl" />
+    <None Include="Connected Services\DanielServices\Service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\DanielServices\Service11.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\DanielServices\Service12.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
     <Content Include="Staff\Web.config" />
     <None Include="Web.Debug.config">
@@ -148,6 +171,9 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\DanielServices\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
