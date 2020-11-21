@@ -43,6 +43,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EncryptionDecryption_Project5">
+      <HintPath>..\..\EncryptionDecryption_Project5\obj\Debug\EncryptionDecryption_Project5.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="SRVTextToImage">
       <HintPath>..\..\..\..\..\..\Downloads\SRVTextToImage.dll\SRVTextToImage.dll</HintPath>
