@@ -34,6 +34,7 @@ namespace Project5
                 authSuccessful = searchStaffXML(txt_username.Text, txt_password.Text);
                 if (authSuccessful)
                 {
+                    Response.Redirect("~/Staff/Staff.aspx");
                     lbl_errors.Text = "Successfully Logged In!";
                     lbl_errors.ForeColor = System.Drawing.Color.Green;
                 }
