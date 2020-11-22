@@ -12,6 +12,7 @@ namespace Project5
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            lbl_currentTime.Text = Global.currentTime;
             // Implement our own cookies to auto authenticate members
             // if(! alreadyLoggedin){
             Response.Redirect("~/MemberLogin.aspx");

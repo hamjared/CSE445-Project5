@@ -16,6 +16,7 @@
         <asp:Label ID="Label1" runat="server" Text="Member Page"></asp:Label>
         <div>
             <asp:Button ID="homePageButton" runat="server" OnClick="homePageButton_Click" Text="Home Page" />
+            <asp:Label ID="lbl_currentTime" runat="server"></asp:Label>
             <br />
             <br />
             <asp:Label ID="lbl_weatherTitle" runat="server" Text="5-Day Weather Forecast!" ForeColor="#0033CC"></asp:Label>
