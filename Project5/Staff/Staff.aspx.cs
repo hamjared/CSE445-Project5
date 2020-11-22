@@ -19,7 +19,7 @@ namespace Project5
 
         protected void homePageButton_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Default.aspx");
+            Response.Redirect("../Default.aspx");
         }
 
         protected void bttn_AddStaff_Click(object sender, EventArgs e)
