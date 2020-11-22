@@ -31,6 +31,7 @@ namespace Project5
                         //after encryption.
 
                         string encrypted_password = EncryptionDecryption.Encryption(Password.Text);
+                        
 
                         XmlWriterSettings settings = new XmlWriterSettings();
                         settings.Indent = true;
@@ -48,9 +49,12 @@ namespace Project5
                         writer.WriteElementString("Username", UserName.Text);
                         writer.WriteElementString("Password", encrypted_password);
                         writer.WriteEndElement();
-                        writer.WriteEndElement();
+                        
 
                         writer.Close();
+
+                        xref.Save(HttpContext.Current.Server.MapPath("App_Data/Member.xml"));
+
 
 
                         Response.Redirect("~/Member.aspx");
@@ -76,7 +80,6 @@ namespace Project5
                 errorLabel.Text = "Username cannot be blank";
             }
         }
-
 
     }
 }

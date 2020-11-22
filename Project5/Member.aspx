@@ -31,7 +31,10 @@
     <form id="YTform" runat="server">
         <br>
         <span class="auto-style1">Youtube Search!</span><br />
-        Enter Key Words to Get Top Youtube Result:&nbsp; <asp:TextBox ID="txt_youtube" runat="server" OnTextChanged="TextBox1_TextChanged"></asp:TextBox>
+        <br />
+        <asp:Label ID="Label2" runat="server" Text="Enter Key Word to get Top Youtube Search Result"></asp:Label>
+        :&nbsp;&nbsp;
+        <asp:TextBox ID="txt_youtube" runat="server"></asp:TextBox>
         <br />
         <asp:Button ID="Button1" runat="server" Text="Search" OnClick="Button1_Click" />
         <br />
