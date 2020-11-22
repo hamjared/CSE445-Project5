@@ -30,7 +30,8 @@ namespace Project5
                         //add user to XML database
                         //after encryption.
 
-                        string encrypted_password = EncryptionDecryption.Encryption(Password.Text);
+                        EncryptionDecryption encrypter = new EncryptionDecryption();
+                        string encrypted_password = encrypter.Encryption(Password.Text);
                         
 
                         XmlWriterSettings settings = new XmlWriterSettings();

@@ -48,7 +48,8 @@ namespace Project5
                                     reader.Read();
 
                                     //encrypt password to check
-                                    string pass = EncryptionDecryption_Project5.EncryptionDecryption.Encryption(Login1.Password);
+                                    EncryptionDecryption encrypter = new EncryptionDecryption();
+                                    string pass = encrypter.Encryption(Login1.Password);
 
                                     if (reader.Value.ToString() == pass)
                                     {
