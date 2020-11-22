@@ -5,6 +5,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <style type="text/css">
+        .auto-style1 {
+            color: #0033CC;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -22,6 +27,20 @@
             <asp:Button ID="bttn_weather" runat="server" Text="Get Weather!" OnClick="bttn_weather_Click" />
         </div>
         <asp:Label ID="lbl_weatherResults" runat="server"></asp:Label>
+    </form>
+    <form id="YTform" runat="server">
+        <br>
+        <span class="auto-style1">Youtube Search!</span><br />
+        Enter Key Words to Get Top Youtube Result:&nbsp; <asp:TextBox ID="txt_youtube" runat="server" OnTextChanged="TextBox1_TextChanged"></asp:TextBox>
+        <br />
+        <asp:Button ID="Button1" runat="server" Text="Search" OnClick="Button1_Click" />
+        <br />
+        <asp:Image ID="Image1" runat="server" Height="100px" Width="113px" />
+&nbsp;&nbsp;
+        <br />
+        <asp:Label ID="VideoTitle" runat="server"></asp:Label>
+        <br />
+        <asp:Label ID="lbl_description" runat="server"></asp:Label>
     </form>
 </body>
 </html>

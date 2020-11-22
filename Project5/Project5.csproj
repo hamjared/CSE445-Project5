@@ -83,6 +83,13 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Connected Services\VanessaService\Service2.disco" />
+    <None Include="Connected Services\VanessaService\configuration91.svcinfo" />
+    <None Include="Connected Services\VanessaService\configuration.svcinfo" />
+    <None Include="Connected Services\VanessaService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
     <Content Include="login.aspx" />
@@ -95,6 +102,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Connected Services\DanielServices\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\VanessaService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -164,6 +176,13 @@
     <None Include="Connected Services\DanielServices\Service12.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Connected Services\VanessaService\Service1.wsdl" />
+    <None Include="Connected Services\VanessaService\Service2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\VanessaService\Service21.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
     <Content Include="Staff\Web.config" />
     <None Include="Web.Debug.config">
@@ -178,6 +197,7 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\DanielServices\" />
+    <WCFMetadataStorage Include="Connected Services\VanessaService\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

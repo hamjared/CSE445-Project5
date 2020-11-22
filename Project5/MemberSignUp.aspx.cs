@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using EncryptionDecryption_Project5;
 
 namespace Project5
 {
@@ -22,6 +23,10 @@ namespace Project5
                 {
                     //add user to XML database
                     //after encryption.
+
+                    string password = EncryptionDecryption.Encryption(Password.Text);
+
+
 
                     Response.Redirect("~/Member.aspx");
 

@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Xml;
+using EncryptionDecryption_Project5;
 
 namespace Project5
 {
@@ -36,8 +37,6 @@ namespace Project5
                     {
                         reader.Read();
 
-                        //encrypt username to check
-
                         if (reader.Value.ToString() == Login1.UserName)
                         {
                             while (reader.Read())
@@ -47,8 +46,9 @@ namespace Project5
                                     reader.Read();
 
                                     //encrypt password to check
+                                    string pass = EncryptionDecryption_Project5.EncryptionDecryption.Encryption(Login1.Password);
 
-                                    if (reader.Value.ToString() == Login1.Password)
+                                    if (reader.Value.ToString() == pass)
                                     {
                                         auth = true;
                                     }
