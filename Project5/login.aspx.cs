@@ -16,28 +16,48 @@ namespace Project5
 
         }
 
-        protected void Login1_Authenticate(object sender, AuthenticateEventArgs e)
+        protected void bttn_Login_Click(object sender, EventArgs e)
         {
             bool authSuccessful = false;
-            authSuccessful = searchStaffXML(Login1.UserName, Login1.Password);
-            if (authSuccessful)
+            bool rememberMe = false;
+            if (txt_username.Text == "")
             {
-                e.Authenticated = true;
-                Response.Redirect("Member.aspx");
+                lbl_errors.Text = "You must enter a username!";
+                lbl_errors.ForeColor = System.Drawing.Color.Red;
+            }
+            else if (txt_password.Text == "")
+            {
+                lbl_errors.Text = "You must enter a password!";
+                lbl_errors.ForeColor = System.Drawing.Color.Red;
             }
             else
             {
-                e.Authenticated = false;
-                Response.Redirect("Default.aspx");
+                authSuccessful = searchStaffXML(txt_username.Text, txt_password.Text);
+                if (authSuccessful)
+                {
+                    lbl_errors.Text = "Successfully Logged In!";
+                    lbl_errors.ForeColor = System.Drawing.Color.Green;
+                    if (checkBox_remember.Checked == true)
+                    {
+                        rememberMe = true;
+                    }
+                    FormsAuthentication.RedirectFromLoginPage(txt_username.Text, rememberMe);
+                    Response.Redirect("~/Staff/Staff.aspx");
+                }
+                else
+                {
+                    lbl_errors.Text = "Invalid Username and Password Combination!";
+                    lbl_errors.ForeColor = System.Drawing.Color.Red;
+                }
             }
-            FormsAuthentication.RedirectFromLoginPage(Login1.UserName, Login1.RememberMeSet);
         }
 
         private bool searchStaffXML(string uname, string pass)
         {
-            XmlTextReader reader = new XmlTextReader("~/App_Data/Staff.xml");
+            XmlTextReader reader = new XmlTextReader(HttpContext.Current.Server.MapPath("App_Data/Staff.xml"));
             if (reader == null)
             {
+                reader.Close();
                 return false;
             }
             while (reader.Read())
@@ -54,10 +74,12 @@ namespace Project5
                                 reader.Read();
                                 if (reader.Value.ToString() == pass)
                                 {
+                                    reader.Close();
                                     return true;
                                 }
                                 else
                                 {
+                                    reader.Close();
                                     return false;
                                 }
                             }
@@ -65,6 +87,7 @@ namespace Project5
                     }
                 }
             }
+            reader.Close();
             return false;
         }
     }

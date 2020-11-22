@@ -21,5 +21,28 @@ namespace Project5
         {
             Response.Redirect("~/Default.aspx");
         }
+
+        protected void bttn_weather_Click(object sender, EventArgs e)
+        {
+            String zcInput = txt_weather.Text; //get the zip code input from the weather text box
+            int i = 0; //placeholder for parsing
+            if (zcInput.Length != 5) //if the zip code is not 5 numbers long then it's not valid
+            {
+                lbl_weatherResults.Text = "Zip Code Length Must Be 5!";
+                lbl_weatherResults.ForeColor = System.Drawing.Color.Red;
+            }
+            else if (!(int.TryParse(zcInput,out i))) {
+                lbl_weatherResults.Text = "Zip Code Must Be A Numeric Value!";
+                lbl_weatherResults.ForeColor = System.Drawing.Color.Red;
+            }
+            else
+            {
+                DanielServices.Service1Client myClient = new DanielServices.Service1Client();
+                String[] result = myClient.Weather5day(zcInput);
+                String resultText = result[0] + "," + result[1] + "," + result[2] + "," + result[3] + "," + result[4];
+                lbl_weatherResults.Text = resultText;
+                lbl_weatherResults.ForeColor = System.Drawing.Color.Black;
+            }
+        }
     }
 }

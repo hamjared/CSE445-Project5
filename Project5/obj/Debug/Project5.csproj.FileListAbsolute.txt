@@ -176,3 +176,5 @@ C:\Users\vanes\Desktop\ASU\Fall2020\CSE445\Project5\Project5\obj\Debug\Project5.
 C:\Users\vanes\Desktop\ASU\Fall2020\CSE445\Project5\Project5\obj\Debug\Project5.csproj.CopyComplete
 C:\Users\vanes\Desktop\ASU\Fall2020\CSE445\Project5\Project5\obj\Debug\Project5.dll
 C:\Users\vanes\Desktop\ASU\Fall2020\CSE445\Project5\Project5\obj\Debug\Project5.pdb
+C:\Users\Daniel\source\repos\CSE445-Project5\Project5\bin\EncryptionDecryption_Project5.dll
+C:\Users\Daniel\source\repos\CSE445-Project5\Project5\bin\EncryptionDecryption_Project5.pdb

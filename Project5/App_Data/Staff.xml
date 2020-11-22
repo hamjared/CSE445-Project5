@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Staff>
-  <LoginInfo>
+  <User>
     <Username>TA</Username>
     <Password>Cse445ta!</Password>
-  </LoginInfo>
+  </User>
 </Staff>
