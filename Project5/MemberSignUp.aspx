@@ -56,6 +56,7 @@
                         <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Create Account" />
             <br />
             <asp:Label ID="errorLabel" runat="server" ForeColor="#CC0000"></asp:Label>
+            <br />
         </div>
         <p>
             &nbsp;</p>

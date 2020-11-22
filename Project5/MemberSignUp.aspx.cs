@@ -4,6 +4,11 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using EncryptionDecryption_Project5;
+using System.Xml;
+using System.Xml.XPath;
+using System.Xml.Schema;
+
 
 namespace Project5
 {
@@ -16,31 +21,65 @@ namespace Project5
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            if(Password.Text == ConfirmPassword.Text && Password.Text != null)
+            if (UserName.Text != null)
             {
-                if (Session["cText"].ToString() == TextBox1.Text)
+                if (Password.Text == ConfirmPassword.Text && Password.Text != null)
                 {
-                    //add user to XML database
-                    //after encryption.
+                    if (Session["cText"].ToString() == TextBox1.Text)
+                    {
+                        //add user to XML database
+                        //after encryption.
 
-                    Response.Redirect("~/Member.aspx");
+                        string encrypted_password = EncryptionDecryption.Encryption(Password.Text);
+                        
+
+                        XmlWriterSettings settings = new XmlWriterSettings();
+                        settings.Indent = true;
+                        settings.NewLineOnAttributes = true;
+
+                        XmlDocument xref = new XmlDocument();
+                        xref.Load(HttpContext.Current.Server.MapPath("App_Data/Member.xml"));
+
+                        XPathNavigator nav = xref.CreateNavigator();
+
+                        nav.MoveToChild("Members", "");
+                        XmlWriter writer = nav.AppendChild();
+
+                        writer.WriteStartElement("User");
+                        writer.WriteElementString("Username", UserName.Text);
+                        writer.WriteElementString("Password", encrypted_password);
+                        writer.WriteEndElement();
+                        
+
+                        writer.Close();
+
+                        xref.Save(HttpContext.Current.Server.MapPath("App_Data/Member.xml"));
 
 
+
+                        Response.Redirect("~/Member.aspx");
+
+
+                    }
+                    else
+                    {
+                        errorLabel.Visible = true;
+                        errorLabel.Text = "Validation incorrect.";
+                    }
                 }
                 else
                 {
+                    //show pw do not match
                     errorLabel.Visible = true;
-                    errorLabel.Text = "Validation incorrect.";
+                    errorLabel.Text = "Passwords Must Match!";
                 }
             }
             else
             {
-                //show pw do not match
                 errorLabel.Visible = true;
-                errorLabel.Text = "Passwords Must Match!";
+                errorLabel.Text = "Username cannot be blank";
             }
         }
-
 
     }
 }
