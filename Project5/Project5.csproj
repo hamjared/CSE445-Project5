@@ -43,8 +43,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EncryptionDecryption_Project5">
-      <HintPath>..\..\EncryptionDecryption_Project5\obj\Debug\EncryptionDecryption_Project5.dll</HintPath>
+    <Reference Include="EncryptionDecryption_Project5, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\EncryptionDecryption_Project5\bin\Debug\EncryptionDecryption_Project5.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="SRVTextToImage">
