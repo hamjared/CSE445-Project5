@@ -24,12 +24,10 @@ namespace Project5
 
         protected void bttn_AddStaff_Click(object sender, EventArgs e)
         {
-            XDocument doc = XDocument.Load("~/App_Data/Staff.xml");
-            //XDocument doc = XDocument.Load("C:/Users/Daniel/source/repos/CSE445-Project5/Project5/App_Data/Staff.xml");
+            XDocument doc = XDocument.Load(HttpContext.Current.Server.MapPath("../App_Data/Staff.xml"));
             XElement staff = doc.Element("Staff");
             staff.Add(new XElement("User", new XElement("Username", txt_Username.Text), new XElement("Password", txt_Password.Text)));
-            doc.Save("~/App_Data/Staff.xml");
-            //doc.Save("C:/Users/Daniel/devTest/Staff.xml");
+            doc.Save(HttpContext.Current.Server.MapPath("../App_Data/Staff.xml"));
             txt_Username.Text = "";
             txt_Password.Text = "";
         }

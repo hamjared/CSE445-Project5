@@ -54,10 +54,10 @@ namespace Project5
 
         private bool searchStaffXML(string uname, string pass)
         {
-            //XmlTextReader reader = new XmlTextReader("~/App_Data/Staff.xml");
-            XmlTextReader reader = new XmlTextReader("C:/Users/Daniel/source/repos/CSE445-Project5/Project5/App_Data/Staff.xml");
+            XmlTextReader reader = new XmlTextReader(HttpContext.Current.Server.MapPath("App_Data/Staff.xml"));
             if (reader == null)
             {
+                reader.Close();
                 return false;
             }
             while (reader.Read())
@@ -74,10 +74,12 @@ namespace Project5
                                 reader.Read();
                                 if (reader.Value.ToString() == pass)
                                 {
+                                    reader.Close();
                                     return true;
                                 }
                                 else
                                 {
+                                    reader.Close();
                                     return false;
                                 }
                             }
@@ -85,6 +87,7 @@ namespace Project5
                     }
                 }
             }
+            reader.Close();
             return false;
         }
     }
