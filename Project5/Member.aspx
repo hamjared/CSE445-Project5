@@ -26,8 +26,10 @@
             <asp:TextBox ID="txt_weather" runat="server"></asp:TextBox>
             <br />
             <asp:Button ID="bttn_weather" runat="server" Text="Get Weather!" OnClick="bttn_weather_Click" />
+            <br />
+             <asp:Label ID="lbl_weatherResults" runat="server"></asp:Label>
         </div>
-        <asp:Label ID="lbl_weatherResults" runat="server"></asp:Label>
+       
    
     <div>
         <h3><span class="auto-style1">Youtube Search!</span></h3>
@@ -41,7 +43,10 @@
 &nbsp;&nbsp;
         <br />
         <asp:Label ID="VideoTitle" runat="server"></asp:Label>
+        <br />
     </div>
+        <br />
+        <div>
         <strong>Find Nearest Store API</strong><br />
     This api will return the address of the nearest store (within 15 miles) to a given zip code with a given name<br />
         <div>
@@ -50,6 +55,7 @@
             <asp:Button ID="findNearestStore_Button" runat="server" OnClick="Get_Store_On_Click" Text="Get Store" />
         </div>
         <asp:TextBox ID="searchResultTextBox" runat="server" Height="90px" TextMode="MultiLine" Width="319px"></asp:TextBox>
+            </div>
          </form>
 </body>
 </html>
