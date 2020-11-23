@@ -14,6 +14,7 @@ namespace Project5
         private FormsAuthenticationTicket userTicket;
         protected void Page_Load(object sender, EventArgs e)
         {
+            lbl_currentTime.Text = Global.currentTime;
             // Implement our own cookies to auto authenticate members
             if (!this.isMemberLoggedIn())
             {
@@ -70,6 +71,22 @@ namespace Project5
                 lbl_weatherResults.Text = resultText;
                 lbl_weatherResults.ForeColor = System.Drawing.Color.Black;
             }
+
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            VanessaService.Service2Client ytSearch = new VanessaService.Service2Client();
+
+            string url = ytSearch.YTurls(txt_youtube.Text);
+            string title = ytSearch.YTtitle(txt_youtube.Text);
+            string description = ytSearch.YTdescription(txt_youtube.Text);
+
+            Image1.ImageUrl = url;
+
+            VideoTitle.Text = title;
+
+            lbl_description.Text = description;
 
         }
     }

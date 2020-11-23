@@ -6,6 +6,8 @@ using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Xml;
+using EncryptionDecryption_Project5;
+using System.Web.Security;
 
 namespace Project5
 {
@@ -22,6 +24,7 @@ namespace Project5
         {
             //IF button checked, save info to cookies
             bool auth = false;
+            bool remember = false;
 
             XmlTextReader reader = new XmlTextReader(HttpContext.Current.Server.MapPath("App_Data/Member.xml"));
 
@@ -37,8 +40,6 @@ namespace Project5
                     {
                         reader.Read();
 
-                        //encrypt username to check
-
                         if (reader.Value.ToString() == Login1.UserName)
                         {
                             while (reader.Read())
@@ -48,8 +49,10 @@ namespace Project5
                                     reader.Read();
 
                                     //encrypt password to check
+                                    EncryptionDecryption encrypter = new EncryptionDecryption();
+                                    string pass = encrypter.Encryption(Login1.Password);
 
-                                    if (reader.Value.ToString() == Login1.Password)
+                                    if (reader.Value.ToString() == pass)
                                     {
                                         auth = true;
                                         createFormsAuthTicket(Login1.UserName, Login1.RememberMeSet);
@@ -68,6 +71,11 @@ namespace Project5
             if(auth)
             {
                 e.Authenticated = true;
+                if (Login1.RememberMeSet == true)
+                {
+                    remember = true;
+                }
+                FormsAuthentication.RedirectFromLoginPage(Login1.UserName.ToString(), remember);
                 Response.Redirect("Member.aspx");
             }
             else

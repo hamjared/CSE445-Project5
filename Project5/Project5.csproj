@@ -43,8 +43,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EncryptionDecryption_Project5">
-      <HintPath>..\..\EncryptionDecryption_Project5\obj\Debug\EncryptionDecryption_Project5.dll</HintPath>
+    <Reference Include="EncryptionDecryption_Project5, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\EncryptionDecryption_Project5\bin\Debug\EncryptionDecryption_Project5.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="SRVTextToImage">
@@ -83,18 +84,31 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Connected Services\VanessaService\Service2.disco" />
+    <None Include="Connected Services\VanessaService\configuration91.svcinfo" />
+    <None Include="Connected Services\VanessaService\configuration.svcinfo" />
+    <None Include="Connected Services\VanessaService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
     <Content Include="login.aspx" />
     <Content Include="Member.aspx" />
     <Content Include="MemberLogin.aspx" />
     <Content Include="Staff\Staff.aspx" />
+    <Content Include="TryIt.aspx" />
     <Content Include="Web.config" />
     <Content Include="MemberSignUp.aspx" />
     <Content Include="CaptchaImage.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Connected Services\DanielServices\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\VanessaService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -152,6 +166,13 @@
     <Compile Include="CaptchaImage.aspx.designer.cs">
       <DependentUpon>CaptchaImage.aspx</DependentUpon>
     </Compile>
+    <Compile Include="TryIt.aspx.cs">
+      <DependentUpon>TryIt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TryIt.aspx.designer.cs">
+      <DependentUpon>TryIt.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\DanielServices\Service1.wsdl" />
@@ -162,6 +183,13 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\DanielServices\Service12.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\VanessaService\Service1.wsdl" />
+    <None Include="Connected Services\VanessaService\Service2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\VanessaService\Service21.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
@@ -178,6 +206,7 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\DanielServices\" />
+    <WCFMetadataStorage Include="Connected Services\VanessaService\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

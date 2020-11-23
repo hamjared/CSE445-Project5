@@ -1,7 +1,13 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Members>
-	<LoginInfo>
+	<User>
 		<Username>jared</Username>
 		<Password>test</Password>
-	</LoginInfo>
+	</User>
+
+  <User>
+    <Username>vbracken92</Username>
+    <Password>poop</Password>
+  </User>
 </Members>
+

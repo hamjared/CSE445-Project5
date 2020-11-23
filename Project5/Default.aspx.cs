@@ -12,6 +12,7 @@ namespace Project5
         protected void Page_Load(object sender, EventArgs e)
         {
             //Check cookies for user information, auto login if the cookies are available and not expired
+            lbl_currentTime.Text = Global.currentTime;
         }
 
         protected void memberPageButton_Click(object sender, EventArgs e)
