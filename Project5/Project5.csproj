@@ -43,8 +43,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EncryptionDecryption_Project5">
-      <HintPath>..\..\EncryptionDecryption_Project5\obj\Debug\EncryptionDecryption_Project5.dll</HintPath>
+    <Reference Include="EncryptionDecryption_Project5, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\EncryptionDecryption_Project5\bin\Debug\EncryptionDecryption_Project5.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="SRVTextToImage">
@@ -96,6 +97,7 @@
     <Content Include="Member.aspx" />
     <Content Include="MemberLogin.aspx" />
     <Content Include="Staff\Staff.aspx" />
+    <Content Include="TryIt.aspx" />
     <Content Include="Web.config" />
     <Content Include="MemberSignUp.aspx" />
     <Content Include="CaptchaImage.aspx" />
@@ -163,6 +165,13 @@
     </Compile>
     <Compile Include="CaptchaImage.aspx.designer.cs">
       <DependentUpon>CaptchaImage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TryIt.aspx.cs">
+      <DependentUpon>TryIt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TryIt.aspx.designer.cs">
+      <DependentUpon>TryIt.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

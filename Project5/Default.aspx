@@ -10,6 +10,7 @@
     <form id="form1" runat="server">
         <asp:Button ID="memberPageButton" runat="server" OnClick="memberPageButton_Click" Text="Member Page" />
         <asp:Button ID="staffPageButton" runat="server" OnClick="Button2_Click" Text="Staff Page" />
+        <asp:Label ID="lbl_currentTime" runat="server"></asp:Label>
         <div>
         </div>
     </form>

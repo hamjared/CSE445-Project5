@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Xml;
@@ -48,11 +49,13 @@ namespace Project5
                                     reader.Read();
 
                                     //encrypt password to check
-                                    string pass = EncryptionDecryption_Project5.EncryptionDecryption.Encryption(Login1.Password);
+                                    EncryptionDecryption encrypter = new EncryptionDecryption();
+                                    string pass = encrypter.Encryption(Login1.Password);
 
                                     if (reader.Value.ToString() == pass)
                                     {
                                         auth = true;
+                                        createFormsAuthTicket(Login1.UserName, Login1.RememberMeSet);
                                     }
                                 }
 
@@ -80,6 +83,20 @@ namespace Project5
                 e.Authenticated = false;
                 Response.Redirect("Default.aspx");
             }
+        }
+
+        private void createFormsAuthTicket(string username, bool isPersistent)
+        {
+            FormsAuthenticationTicket ticket = new FormsAuthenticationTicket(
+                1,
+                username,
+                DateTime.Now,
+                DateTime.Now.AddMinutes(30),
+                isPersistent,
+                "");
+            string encryptedTicket = FormsAuthentication.Encrypt(ticket);
+            HttpCookie cookie = new HttpCookie("memberCookie", encryptedTicket);
+            Response.Cookies.Add(cookie);
         }
 
         protected void Button1_Click(object sender, EventArgs e)
