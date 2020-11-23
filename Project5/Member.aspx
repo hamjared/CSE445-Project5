@@ -42,6 +42,14 @@
         <br />
         <asp:Label ID="VideoTitle" runat="server"></asp:Label>
     </div>
+        <strong>Find Nearest Store API</strong><br />
+    This api will return the address of the nearest store (within 15 miles) to a given zip code with a given name<br />
+        <div>
+            Store Name<asp:TextBox ID="storeName" runat="server"></asp:TextBox>
+            Zip Code<asp:TextBox ID="zipCode" runat="server"></asp:TextBox>
+            <asp:Button ID="findNearestStore_Button" runat="server" OnClick="Get_Store_On_Click" Text="Get Store" />
+        </div>
+        <asp:TextBox ID="searchResultTextBox" runat="server" Height="90px" TextMode="MultiLine" Width="319px"></asp:TextBox>
          </form>
 </body>
 </html>
