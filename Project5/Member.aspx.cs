@@ -86,8 +86,6 @@ namespace Project5
 
             VideoTitle.Text = title;
 
-            lbl_description.Text = description;
-
         }
     }
 }

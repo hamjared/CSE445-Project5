@@ -13,7 +13,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <asp:Label ID="Label1" runat="server" Text="Member Page"></asp:Label>
+        <h1><asp:Label ID="Label1" runat="server" Text="Member Page"></asp:Label></h1>
         <div>
             <asp:Button ID="homePageButton" runat="server" OnClick="homePageButton_Click" Text="Home Page" />
             <asp:Label ID="lbl_currentTime" runat="server"></asp:Label>
@@ -28,21 +28,20 @@
             <asp:Button ID="bttn_weather" runat="server" Text="Get Weather!" OnClick="bttn_weather_Click" />
         </div>
         <asp:Label ID="lbl_weatherResults" runat="server"></asp:Label>
-    </form>
+   
     <div>
-        <span class="auto-style1">Youtube Search!</span>
-        <asp:Label ID="Label2" runat="server" Text="Enter Key Word to get Top Youtube Search Result"></asp:Label>
+        <h3><span class="auto-style1">Youtube Search!</span></h3>
+        <p><asp:Label ID="Label2" runat="server" Text="Enter Key Word to get Top Youtube Search Result"></asp:Label>
         :&nbsp;&nbsp;
         <asp:TextBox ID="txt_youtube" runat="server"></asp:TextBox>
-        <br />
-        <asp:Button ID="Button1" runat="server" Text="Search" OnClick="Button1_Click" />
-        <br />
+             &nbsp;&nbsp;
+             <asp:Button ID="Button1" runat="server" Text="Search" OnClick="Button1_Click" />
+            </p>
         <asp:Image ID="Image1" runat="server" Height="100px" Width="113px" />
 &nbsp;&nbsp;
         <br />
         <asp:Label ID="VideoTitle" runat="server"></asp:Label>
-        <br />
-        <asp:Label ID="lbl_description" runat="server"></asp:Label>
     </div>
+         </form>
 </body>
 </html>

@@ -25,12 +25,12 @@
             <h2>Weather Service</h2>
             <p>This service returns the weather of a given zip code by the user.</p>
             <h2>Youtube Search</h2>
-            <p>This service allows users to search key words, the output is the top result from Youtube: The thumbnail of the video, description, and title.</p>
+            <p>This service allows users to search key words, the output is the top result from Youtube: The thumbnail of the video and title.</p>
             <h2>Closest Store</h2>
             <p>This service returns the closest grocer given a zip code by the user.</p>
         </div>
         <div>
-            <p>To Access these services, please log in by clicking the "login" button on the top right of the screen. If you do not have an account, you may click on this button to create an account as well.</p>
+            <p>To Access these services, please log in by clicking the "Member" button on the top right of the screen. If you do not have an account, you may click on this button to create an account as well.</p>
         </div>
     </form>
 </body>
