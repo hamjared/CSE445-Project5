@@ -29,10 +29,8 @@
         </div>
         <asp:Label ID="lbl_weatherResults" runat="server"></asp:Label>
     </form>
-    <form id="YTform" runat="server">
-        <br>
-        <span class="auto-style1">Youtube Search!</span><br />
-        <br />
+    <div>
+        <span class="auto-style1">Youtube Search!</span>
         <asp:Label ID="Label2" runat="server" Text="Enter Key Word to get Top Youtube Search Result"></asp:Label>
         :&nbsp;&nbsp;
         <asp:TextBox ID="txt_youtube" runat="server"></asp:TextBox>
@@ -45,6 +43,6 @@
         <asp:Label ID="VideoTitle" runat="server"></asp:Label>
         <br />
         <asp:Label ID="lbl_description" runat="server"></asp:Label>
-    </form>
+    </div>
 </body>
 </html>

@@ -1,13 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Members>
-	<User>
-		<Username>jared</Username>
-		<Password>test</Password>
-	</User>
-
   <User>
-    <Username>vbracken92</Username>
-    <Password>poop</Password>
+    <Username>jared</Username>
+    <Password>test</Password>
+  </User>
+  <User>
+    <Username>vanessa</Username>
+    <Password>dpgp</Password>
+  </User>
+  <User>
+    <Username>bracken</Username>
+    <Password>dpgp</Password>
   </User>
 </Members>
-
