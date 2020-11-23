@@ -12,9 +12,38 @@ namespace Project5
 {
     public partial class Staff : System.Web.UI.Page
     {
+        private FormsAuthenticationTicket userTicket;
         protected void Page_Load(object sender, EventArgs e)
         {
-            //FormsAuthentication.RedirectToLoginPage();
+            if (!this.isMemberLoggedIn())
+            {
+
+                FormsAuthentication.RedirectToLoginPage();
+            }
+            
+        }
+
+        private bool isMemberLoggedIn()
+        {
+            try
+            {
+                HttpCookie authCookie = Request.Cookies.Get(FormsAuthentication.FormsCookieName);
+                if (authCookie == null)
+                {
+                    return false;
+                }
+                userTicket = FormsAuthentication.Decrypt(authCookie.Value);
+            }
+            catch (ArgumentException)
+            {
+                return false;
+            }
+
+            if (userTicket == null)
+            {
+                return false;
+            }
+            return true;
         }
 
         protected void homePageButton_Click(object sender, EventArgs e)
