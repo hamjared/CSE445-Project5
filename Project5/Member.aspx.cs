@@ -87,5 +87,12 @@ namespace Project5
             VideoTitle.Text = title;
 
         }
+
+        protected void Get_Store_On_Click(object sender, EventArgs e)
+        {
+            JaredService.SmartHomeServicesClient findStoreService = new JaredService.SmartHomeServicesClient();
+            string results = findStoreService.findNearestStore(storeName.Text, zipCode.Text);
+            searchResultTextBox.Text = results;
+        }
     }
 }
