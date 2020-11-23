@@ -19,29 +19,29 @@
             <asp:Label ID="lbl_currentTime" runat="server"></asp:Label>
             <br />
             <br />
-            <asp:Label ID="lbl_weatherTitle" runat="server" Text="5-Day Weather Forecast!" ForeColor="#0033CC"></asp:Label>
+            <h3><asp:Label ID="lbl_weatherTitle" runat="server" Text="5-Day Weather Forecast!" ForeColor="#0033CC"></asp:Label></h3>
             <br />
             <asp:Label ID="lbl_weatherInstructions" runat="server" Text="Enter your Zip Code to get the weather:"></asp:Label>
             &nbsp
             <asp:TextBox ID="txt_weather" runat="server"></asp:TextBox>
             <br />
             <asp:Button ID="bttn_weather" runat="server" Text="Get Weather!" OnClick="bttn_weather_Click" />
+            <br />
+            <asp:Label ID="lbl_weatherResults" runat="server"></asp:Label>
         </div>
-        <asp:Label ID="lbl_weatherResults" runat="server"></asp:Label>
-   
-    <div>
-        <h3><span class="auto-style1">Youtube Search!</span></h3>
-        <p><asp:Label ID="Label2" runat="server" Text="Enter Key Word to get Top Youtube Search Result"></asp:Label>
-        :&nbsp;&nbsp;
-        <asp:TextBox ID="txt_youtube" runat="server"></asp:TextBox>
-             &nbsp;&nbsp;
-             <asp:Button ID="Button1" runat="server" Text="Search" OnClick="Button1_Click" />
-            </p>
-        <asp:Image ID="Image1" runat="server" Height="100px" Width="113px" />
-&nbsp;&nbsp;
-        <br />
-        <asp:Label ID="VideoTitle" runat="server"></asp:Label>
-    </div>
-         </form>
+        <div>
+            <h3><span class="auto-style1">Youtube Search!</span></h3>
+            <p><asp:Label ID="Label2" runat="server" Text="Enter Key Word to get Top Youtube Search Result"></asp:Label>
+            :&nbsp;&nbsp;
+            <asp:TextBox ID="txt_youtube" runat="server"></asp:TextBox>
+                 &nbsp;&nbsp;
+                 <asp:Button ID="Button1" runat="server" Text="Search" OnClick="Button1_Click" />
+                </p>
+            <asp:Image ID="Image1" runat="server" Height="100px" Width="113px" />
+    &nbsp;&nbsp;
+            <br />
+            <asp:Label ID="VideoTitle" runat="server"></asp:Label>
+        </div>
+   </form>
 </body>
 </html>
