@@ -27,7 +27,7 @@
             <h2>Youtube Search</h2>
             <p>This service allows users to search key words, the output is the top result from Youtube: The thumbnail of the video and title.</p>
             <h2>Closest Store</h2>
-            <p>This service returns the closest grocer given a zip code by the user.</p>
+            <p>This service returns the closest store given a zip code and a store name by the user.</p>
         </div>
         <div>
             <p>To Access these services, please log in by clicking the "Member" button on the top left of the screen. If you do not have an account, you may click on this button to create an account as well.</p>
