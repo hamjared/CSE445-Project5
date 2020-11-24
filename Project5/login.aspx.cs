@@ -42,7 +42,7 @@ namespace Project5
                         rememberMe = true;
                     }
                     FormsAuthentication.RedirectFromLoginPage(txt_username.Text, rememberMe);
-                    //Response.Redirect("~/Staff/Staff.aspx");
+                    Response.Redirect("~/Staff/Staff.aspx");
                 }
                 else
                 {
