@@ -65,7 +65,7 @@ namespace Project5
             }
             else
             {
-                DanielServices.Service1Client myClient = new DanielServices.Service1Client();
+                DanielServices.Service1Client myClient = new DanielServices.Service1Client("BasicHttpBinding_IService11");
                 String[] result = myClient.Weather5day(zcInput);
                 String resultText = result[0] + "," + result[1] + "," + result[2] + "," + result[3] + "," + result[4];
                 lbl_weatherResults.Text = resultText;
@@ -90,7 +90,7 @@ namespace Project5
 
         protected void Get_Store_On_Click(object sender, EventArgs e)
         {
-            JaredService.SmartHomeServicesClient findStoreService = new JaredService.SmartHomeServicesClient();
+            JaredService.SmartHomeServicesClient findStoreService = new JaredService.SmartHomeServicesClient("BasicHttpBinding_ISmartHomeServices1");
             string results = findStoreService.findNearestStore(storeName.Text, zipCode.Text);
             searchResultTextBox.Text = results;
         }
