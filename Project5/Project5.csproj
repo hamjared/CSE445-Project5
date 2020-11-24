@@ -84,10 +84,24 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Connected Services\JaredService\SmartHomeServices.wsdl" />
+    <None Include="Connected Services\JaredService\SmartHomeServices.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\JaredService\SmartHomeServices1.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\VanessaService\Service2.disco" />
     <None Include="Connected Services\VanessaService\configuration91.svcinfo" />
     <None Include="Connected Services\VanessaService\configuration.svcinfo" />
     <None Include="Connected Services\VanessaService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\JaredService\SmartHomeServices.disco" />
+    <None Include="Connected Services\JaredService\configuration91.svcinfo" />
+    <None Include="Connected Services\JaredService\configuration.svcinfo" />
+    <None Include="Connected Services\JaredService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
@@ -104,6 +118,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Connected Services\DanielServices\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\JaredService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -206,6 +225,7 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\DanielServices\" />
+    <WCFMetadataStorage Include="Connected Services\JaredService\" />
     <WCFMetadataStorage Include="Connected Services\VanessaService\" />
   </ItemGroup>
   <PropertyGroup>
