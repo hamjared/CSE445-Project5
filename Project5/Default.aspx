@@ -32,6 +32,9 @@
         <div>
             <p>To Access these services, please log in by clicking the "Member" button on the top left of the screen. If you do not have an account, you may click on this button to create an account as well.</p>
         </div>
+        <div>
+            <p><a href="http://webstrar57.fulton.asu.edu/ComponentsTable.html"> Application and Components Summary Table </a></p>
+        </div>
     </form>
 </body>
 </html>
